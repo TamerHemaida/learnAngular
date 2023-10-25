@@ -1,0 +1,64 @@
+<div class="container"> 
+<div class="row">  
+    <div class="col-sm-12 btn btn-primary">  
+      Angular Sweetalert Demo  
+    </div>  
+  </div>  
+  <div style="padding: 5px;margin: 5px;">  
+    <button class="btn btn-info" style="margin-right: 10px;margin-left: 10px;"(click)="simpleAlert()">Simple Alert</button>  
+    <button class="btn btn-success" style="margin-right: 10px;margin-left: 10px;" (click)="alertWithSuccess()">Alert with Success</button>  
+    <button class="btn btn-primary" style="margin-right: 10px;margin-left: 10px;" (click)="confirmBox()">Confirm Box</button>  
+    <button class="btn btn-danger" style="margin-right: 10px;margin-left: 10px;" (click)="erroalert()">Error Alert</button>  
+    <button class="btn btn-warning" style="margin-right: 10px;margin-left: 10px;" (click)="topend()">Top End</button>  
+  </div>  
+<div *ngIf="Id > 55 then age_info"></div>
+  <p>{{Id}}</p>
+  <ng-template  #age_info>
+    <div class="alert alert-danger" role="alert">
+      <b>{{Id}} is less than 18</b>
+    </div>
+  </ng-template>
+  <div class="col-md-12 col-lg-12">
+      <div class="row g-3">
+        <div class="col-sm-3">
+          <label for="firstName" class="form-label">ID</label>
+          <input type="number" class="form-control"  [(ngModel)]="Id">
+        </div>
+     
+
+        <div class="col-sm-3">
+          <label for="firstName" class="form-label">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="Name">
+        </div>
+
+        <div class="col-sm-3">
+          <label for="firstName" class="form-label">Age</label>
+          <input type="number" class="form-control" [(ngModel)]="Age">
+        </div>
+
+        <div class="col-sm-3">
+          <label for="firstName" class="form-label">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="Email">
+        </div>
+      </div>
+  </div>
+
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td>{{ row.Id }}</td>
+        <td>{{ row.Name }}</td>
+        <td>{{ row.Age }}</td>
+        <td>{{ row.Email }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <button class="btn btn-primary" (click)="addRow()">Add Row</button>
+</div>
